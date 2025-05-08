@@ -25,8 +25,8 @@ for (let d = new Date(startDate); d <= today; d.setDate(d.getDate() + 1)) {
     const formatted = d.toISOString().slice(0, 19).replace('T', ' ');
     fs.appendFileSync('file.txt', formatted + '\n');
     execSync('git add .');
-    execSync(`git commit --date="${formatted}" -m "commit"`);
-    console.log("Commit Saved");
+    execSync(`git commit --date="${formatted}" -m "Commit Saved In ${formatted}"`);
+    console.log(`Commit Saved In ${formatted}`);
   }
 }
 
